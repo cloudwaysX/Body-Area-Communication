@@ -41,7 +41,16 @@ def argument_parser():
                     help='degrees of the pseudo random data',default=3)
     parser.add_argument('--rand_seed',type=int,
                     help='seed to generate the pseudo random GLFSR and noise',default=1)
-
+    parser.add_argument('--RX_decimation',type=int,
+                    help='Decimation number at RX to downsample and LPF',default=100)
+    parser.add_argument('--samp_rate',type=float,
+                    help='sample rate',default=20e6)
+    parser.add_argument('--dummy',type=int,
+                    help='a factor to control the frequncy deviation, 1e5/dummy',default=10)
+    parser.add_argument('--carrier_freq',type=int,
+                    help='carrier frequncy',default=1.75e6)
+    parser.add_argument('--BER_windowSize',type=int,
+                    help='number of the points you want to calcualte the bit error rate',default=100)
     return parser 
 
 
@@ -79,21 +88,22 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.dummy = dummy = 10
-        self.samp_rate = samp_rate = 45.6e6/2
+        self.dummy = dummy = options.dummy
+        self.samp_rate = samp_rate = options.samp_rate
         self.fsk_deviation_hz = fsk_deviation_hz = 1e5/dummy
         self.nfilts = nfilts = 64
         self.SPS = SPS = int(samp_rate/fsk_deviation_hz/4)
-        self.RX_decimation = RX_decimation = 19*3*2
+        self.RX_decimation = RX_decimation = options.RX_decimation
         self.EBW = EBW = .05
         self.rand_seed = rand_seed = options.rand_seed
         self.delay = delay = 0
-        self.carrier_freq = carrier_freq = 1.75e6
+        self.carrier_freq = carrier_freq = options.carrier_freq
 
         self.RRC_filter_taps = RRC_filter_taps = firdes.root_raised_cosine(nfilts, nfilts, 1.0, EBW, 5*SPS*nfilts/RX_decimation)
 
         self.GLFSR_degree = GLFSR_degree = options.GLFSR_degree
         self.FindDelay = FindDelay = 0
+        self.BER_windowSize = BER_windowSize = options.BER_windowSize
 
         ##################################################
         # Blocks
@@ -122,7 +132,7 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
         self.osmosdr_sink_0.set_sample_rate(samp_rate)
         self.osmosdr_sink_0.set_center_freq(carrier_freq, 0)
         self.osmosdr_sink_0.set_freq_corr(0, 0)
-        self.osmosdr_sink_0.set_gain(1, 0)
+        self.osmosdr_sink_0.set_gain(0, 0)
         self.osmosdr_sink_0.set_if_gain(16, 0)
         self.osmosdr_sink_0.set_bb_gain(16, 0)
         self.osmosdr_sink_0.set_antenna('', 0)
@@ -141,9 +151,9 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
         self.blocks_float_to_char_0 = blocks.float_to_char(1, 1)
         self.blocks_delay_0 = blocks.delay(gr.sizeof_char*1, delay)
         self.blks2_error_rate_0 = grc_blks2.error_rate(
-        	type='BER',
-        	win_size=100,
-        	bits_per_symbol=1,
+            type='BER',
+            win_size=BER_windowSize,
+            bits_per_symbol=1,
         )
         self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, -carrier_freq, 1, 0)
         self.analog_quadrature_demod_cf_0 = analog.quadrature_demod_cf(samp_rate/(2*math.pi*fsk_deviation_hz/8.0)/(RX_decimation))
@@ -152,14 +162,13 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
         self.analog_const_source_x_0 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 0)
 
         def _FindDelay_probe():
-            print "test GLFSR_degree = " + str(self.GLFSR_degree)
             while True:
                 val = self.probe_BER.level()
                 the_delay=self.get_delay()
                 if (val > 0.3) and (val < 0.7):
                     self.set_delay(the_delay+1)
                 else:
-                    print "At delay = " + str(the_delay/3) + ", BER = "+str(val)
+                    print "At delay = " + str(the_delay) + ", BER = "+str(val)
                 try:
                     self.set_FindDelay(val)
                 except AttributeError:
@@ -277,7 +286,7 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
 
     def set_delay(self, delay):
         self.delay = delay
-        self.blocks_delay_0.set_dly(self.delay/3)
+        self.blocks_delay_0.set_dly(self.delay)
 
     def get_carrier_freq(self):
         return self.carrier_freq
@@ -308,6 +317,11 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
     def set_FindDelay(self, FindDelay):
         self.FindDelay = FindDelay
 
+    def get_BER_windowSize(self):
+        return self.BER_windowSize
+
+    def set_BER_windowSize(self, BER_windowSize):
+        self.BER_windowSize = BER_windowSize
 
 def argument_parser():
     parser = OptionParser(usage="%prog: [options]", option_class=eng_option)
@@ -328,6 +342,15 @@ def main(top_block_cls=MSK_hackrf, options=None):
     ##################################################
     print "GLFSR_degree = " + str(tb.GLFSR_degree)
     print "rand_seed = " + str(tb.rand_seed)
+    print "BER_windowSize = " + str(tb.BER_windowSize)
+    print "samp_rate = " + str(tb.samp_rate)
+    print "fsk_deviation_hz = " + str(tb.fsk_deviation_hz)
+    print "RX_decimation = " + str(tb.RX_decimation)
+    print "carrier_frequncy = " + str(tb.carrier_freq)
+    print "SPS = " + str(tb.SPS)
+    print "baud_rate = " + str(tb.samp_rate/tb.SPS)
+    print "================================================="
+
     tb.start()
     tb.show()
 

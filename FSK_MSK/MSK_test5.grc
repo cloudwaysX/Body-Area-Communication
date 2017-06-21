@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>GLFSR_MSK_Block2</value>
+      <value>GLFSR_MSK_Block3</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -132,7 +132,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(312, 164)</value>
+      <value>(312, 148)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -321,7 +321,7 @@ per signal</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(552, 164)</value>
+      <value>(552, 148)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -462,7 +462,7 @@ GFSK modulation</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 164)</value>
+      <value>(456, 148)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -536,6 +536,53 @@ than BW of signal itself.</value>
     </param>
   </block>
   <block>
+    <key>analog_const_source_x</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>const</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(808, 364)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>analog_const_source_x_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+  </block>
+  <block>
     <key>analog_feedforward_agc_cc</key>
     <param>
       <key>alias</key>
@@ -581,61 +628,6 @@ AGC</value>
     <param>
       <key>reference</key>
       <value>1.0</value>
-    </param>
-  </block>
-  <block>
-    <key>analog_noise_source_x</key>
-    <param>
-      <key>amp</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(912, 424)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>analog_noise_source_x_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>noise_type</key>
-      <value>analog.GR_GAUSSIAN</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>seed</key>
-      <value>rand_seed</value>
     </param>
   </block>
   <block>
@@ -926,7 +918,7 @@ squelch</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(696, 444)</value>
+      <value>(296, 388)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1122,7 +1114,7 @@ squelch</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1040, 352)</value>
+      <value>(1016, 264)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1217,7 +1209,7 @@ translation (down convert)</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(512, 448)</value>
+      <value>(88, 388)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1269,7 +1261,7 @@ samples per symbol</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1096, 260)</value>
+      <value>(640, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1434,7 +1426,7 @@ samples per symbol</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(776, 324)</value>
+      <value>(808, 244)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1459,6 +1451,69 @@ samples per symbol</value>
     <param>
       <key>sensitivity</key>
       <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>channels_channel_model</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_tags</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>epsilon</key>
+      <value>1.0</value>
+    </param>
+    <param>
+      <key>freq_offset</key>
+      <value>1.5e6</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1108, 344)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>270</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>channels_channel_model_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>noise_voltage</key>
+      <value>noise_amp</value>
+    </param>
+    <param>
+      <key>seed</key>
+      <value>rand_seed</value>
+    </param>
+    <param>
+      <key>taps</key>
+      <value>1.0 + 1.0j</value>
     </param>
   </block>
   <block>
@@ -1524,7 +1579,7 @@ samples per symbol</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(832, 252)</value>
+      <value>(432, 252)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2430,7 +2485,7 @@ this library.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(836, 440)</value>
+      <value>(452, 408)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -3191,11 +3246,11 @@ this library.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1200, 364)</value>
+      <value>(1140, 496)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
+      <value>270</value>
     </param>
     <param>
       <key>id</key>
@@ -3234,16 +3289,16 @@ this library.</value>
     </param>
   </block>
   <connection>
+    <source_block_id>analog_const_source_x_0</source_block_id>
+    <sink_block_id>blocks_float_to_complex_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>1</sink_key>
+  </connection>
+  <connection>
     <source_block_id>analog_feedforward_agc_cc_0</source_block_id>
     <sink_block_id>analog_quadrature_demod_cf_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>analog_noise_source_x_0</source_block_id>
-    <sink_block_id>blocks_float_to_complex_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>1</sink_key>
   </connection>
   <connection>
     <source_block_id>analog_pwr_squelch_xx_0_0</source_block_id>
@@ -3319,7 +3374,7 @@ this library.</value>
   </connection>
   <connection>
     <source_block_id>blocks_float_to_complex_0</source_block_id>
-    <sink_block_id>virtual_sink_0</sink_block_id>
+    <sink_block_id>channels_channel_model_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3344,12 +3399,6 @@ this library.</value>
   <connection>
     <source_block_id>blocks_throttle_0</source_block_id>
     <sink_block_id>blks2_error_rate_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_throttle_0</source_block_id>
-    <sink_block_id>blocks_char_to_float_1_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3380,6 +3429,12 @@ this library.</value>
   <connection>
     <source_block_id>blocks_vco_f_0_0_0_0</source_block_id>
     <sink_block_id>qtgui_time_sink_x_0_0_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>channels_channel_model_0</source_block_id>
+    <sink_block_id>virtual_sink_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

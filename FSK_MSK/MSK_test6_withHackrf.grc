@@ -93,6 +93,33 @@
     </param>
     <param>
       <key>_coordinate</key>
+      <value>(1112, 132)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>BER_windowSize</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>100</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
       <value>(888, 32)</value>
     </param>
     <param>
@@ -175,7 +202,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>4</value>
+      <value>3</value>
     </param>
   </block>
   <block>
@@ -247,7 +274,7 @@ factor</value>
     </param>
     <param>
       <key>value</key>
-      <value>19*3*2</value>
+      <value>100</value>
     </param>
   </block>
   <block>
@@ -496,7 +523,7 @@ than BW of signal itself.</value>
     </param>
     <param>
       <key>value</key>
-      <value>45.6e6/2</value>
+      <value>20e6</value>
     </param>
   </block>
   <block>
@@ -808,7 +835,7 @@ squelch</value>
     </param>
     <param>
       <key>win_size</key>
-      <value>1000</value>
+      <value>BER_windowSize</value>
     </param>
   </block>
   <block>
