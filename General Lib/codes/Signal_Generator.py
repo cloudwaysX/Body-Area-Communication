@@ -36,7 +36,7 @@ def argument_parser():
     parser.add_argument('--rand_seed',type=int,
                     help='seed to generate the pseudo random GLFSR and noise',default=1)
     parser.add_argument('--samp_rate',type=float,
-                    help='sample rate',default=20e6)
+                    help='sample rate',default=4e6)
     parser.add_argument('--dst',type=str,
                     help='destination of folder the source signal located',default='C:\\Users\\cheny\\Documents\\Body-Area-Communication\\General Lib\\Files\\')
     parser.add_argument('--length',type=int,

@@ -36,11 +36,11 @@ def argument_parser():
     parser.add_argument('--rand_seed',type=int,
                     help='seed to generate the pseudo random GLFSR and noise',default=1)
     parser.add_argument('--samp_rate',type=float,
-                    help='sample rate',default=20e6)
+                    help='sample rate',default=4e6)
     parser.add_argument('--dummy',type=int,
-                    help='a factor to control the frequncy deviation, 1e5/dummy',default=10)
+                    help='a factor to control the frequncy deviation, 1e5/dummy',default=5)
     parser.add_argument('--carrier_freq',type=int,
-                    help='carrier frequncy',default=1.75e6)
+                    help='carrier frequncy',default=270e3)
     parser.add_argument('--dst',type=str,
                     help='destination of folder the source signal located',default='C:\\Users\\cheny\\Documents\\Body-Area-Communication\\General Lib\\Files\\')
     parser.add_argument('--length',type=int,
@@ -85,7 +85,7 @@ class MSK_FSK_mod(gr.top_block, Qt.QWidget):
         self.samp_rate = samp_rate = options.samp_rate
         self.rand_seed = rand_seed = options.rand_seed
         self.length = length = options.length
-        self.fsk_deviation_hz = fsk_deviation_hz = 1e5/dummy
+        self.fsk_deviation_hz = fsk_deviation_hz = 2e4/dummy
         self.dst = dst = options.dst
         self.carrier_freq = carrier_freq = options.carrier_freq
         self.GLFSR_degree = GLFSR_degree = options.GLFSR_degree

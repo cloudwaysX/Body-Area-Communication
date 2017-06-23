@@ -38,19 +38,21 @@ def argument_parser():
     parser.add_argument('--rand_seed',type=int,
                     help='seed to generate the pseudo random GLFSR and noise',default=1)
     parser.add_argument('--RX_decimation',type=int,
-                    help='Decimation number at RX to downsample and LPF',default=100)
+                    help='Decimation number at RX to downsample and LPF',default=50)
     parser.add_argument('--samp_rate',type=float,
-                    help='sample rate',default=20e6)
+                    help='sample rate',default=4e6)
     parser.add_argument('--dummy',type=int,
-                    help='a factor to control the frequncy deviation, 1e5/dummy',default=10)
+                    help='a factor to control the frequncy deviation, 1e5/dummy',default=5)
     parser.add_argument('--carrier_freq',type=int,
-                    help='carrier frequncy',default=1.75e6)
+                    help='carrier frequncy',default=270e3)
     parser.add_argument('--dst',type=str,
                     help='destination of folder the source signal located',default='C:\\Users\\cheny\\Documents\\Body-Area-Communication\\General Lib\\Files\\')
     parser.add_argument('--length',type=int,
                     help='length of signal, better to be 2**x',default=2**14)
     parser.add_argument('--noise_amp',type=float,
                     help='amplitute for gaussian noise (refer to signal amp =1)',default=0.0)
+    parser.add_argument('--offset_freq',type=float,
+                    help='adjust the frequncy offset between the channel',default=0.0)
     return parser 
 
 
@@ -85,7 +87,7 @@ class MSK_FSK_demod(gr.top_block, Qt.QWidget):
         ##################################################
         self.dummy = dummy = options.dummy
         self.samp_rate = samp_rate = options.samp_rate
-        self.fsk_deviation_hz = fsk_deviation_hz = 1e5/dummy
+        self.fsk_deviation_hz = fsk_deviation_hz = 2e4/dummy
         self.rand_seed = rand_seed = options.rand_seed
         self.noise_amp = noise_amp = options.noise_amp
         self.nfilts = nfilts = 64
@@ -96,6 +98,7 @@ class MSK_FSK_demod(gr.top_block, Qt.QWidget):
         self.RX_decimation = RX_decimation = options.RX_decimation
         self.GLFSR_degree = GLFSR_degree = options.GLFSR_degree
         self.EBW = EBW = .05
+        self.offset_freq = offset_freq = options.offset_freq
         self.demod_file_name = demod_file_name = dst+"GLFSR_"+str(GLFSR_degree)+"_"+str(rand_seed)+"_"+str(length)+"_"+str(int(samp_rate/1e3))+'K_'+str(int(carrier_freq/1000))+"K_"+str(int(fsk_deviation_hz/1000))+"K_"+str(int(noise_amp*100))+"_"+str(RX_decimation)+"_demod"
         self.TX_file_name = TX_file_name = dst+"GLFSR_"+str(GLFSR_degree)+"_"+str(rand_seed)+"_"+str(length)+"_"+str(int(samp_rate/1e3))+'K_'+str(int(carrier_freq/1000))+"K_"+str(int(fsk_deviation_hz/1000))+"K_"+str(int(noise_amp*100))+"_TX"
 
@@ -256,6 +259,13 @@ class MSK_FSK_demod(gr.top_block, Qt.QWidget):
     def set_EBW(self, EBW):
         self.EBW = EBW
 
+    def get_offset_freq(self):
+        return self.offset_freq
+
+    def set_offset_freq(self, offset_freq):
+        self.offset_freq = offset_freq
+        self.analog_sig_source_x_0.set_frequency(-self.carrier_freq+self.offset_freq)
+
     def get_demod_file_name(self):
         return self.demod_file_name
 
@@ -300,6 +310,7 @@ def main(top_block_cls=MSK_FSK_demod, options=None):
     print "carrier_frequncy = " + str(tb.carrier_freq)
     print "SPS = " + str(tb.SPS)
     print "baud_rate = " + str(tb.samp_rate/tb.SPS)
+    print "offset_freq = " + str(tb.offset_freq)
     print "================================================="
     tb.start()
     tb.show()
