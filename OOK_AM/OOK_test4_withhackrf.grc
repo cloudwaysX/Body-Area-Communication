@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>top_block</value>
+      <value>OOK_hackrf</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -5366,7 +5366,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1128, 136)</value>
+      <value>(1168, 132)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5549,6 +5549,12 @@
   <connection>
     <source_block_id>osmosdr_source_0</source_block_id>
     <sink_block_id>qtgui_time_sink_x_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>virtual_source_0</source_block_id>
+    <sink_block_id>low_pass_filter_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
