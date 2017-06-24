@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>MSK_hackrf2</value>
+      <value>MSK_hackrf3</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -132,7 +132,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>.05</value>
+      <value>0.35</value>
     </param>
   </block>
   <block>
@@ -190,7 +190,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(104, 168)</value>
+      <value>(120, 172)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -274,7 +274,7 @@ factor</value>
     </param>
     <param>
       <key>value</key>
-      <value>100</value>
+      <value>50</value>
     </param>
   </block>
   <block>
@@ -329,7 +329,7 @@ per signal</value>
     </param>
     <param>
       <key>value</key>
-      <value>1.75e6</value>
+      <value>270e3</value>
     </param>
   </block>
   <block>
@@ -340,7 +340,7 @@ per signal</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -383,7 +383,7 @@ per signal</value>
     </param>
     <param>
       <key>value</key>
-      <value>10</value>
+      <value>5</value>
     </param>
   </block>
   <block>
@@ -411,7 +411,7 @@ GFSK modulation</value>
     </param>
     <param>
       <key>value</key>
-      <value>1e5/dummy</value>
+      <value>2e4/dummy</value>
     </param>
   </block>
   <block>
@@ -469,6 +469,69 @@ GFSK modulation</value>
     </param>
   </block>
   <block>
+    <key>variable_qtgui_range</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>5050</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(8, 68)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>offset_freq</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>min_len</key>
+      <value>200</value>
+    </param>
+    <param>
+      <key>orient</key>
+      <value>Qt.Horizontal</value>
+    </param>
+    <param>
+      <key>start</key>
+      <value>-20e3</value>
+    </param>
+    <param>
+      <key>step</key>
+      <value>1e3</value>
+    </param>
+    <param>
+      <key>stop</key>
+      <value>20e3</value>
+    </param>
+    <param>
+      <key>rangeType</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>widget</key>
+      <value>counter_slider</value>
+    </param>
+  </block>
+  <block>
     <key>variable</key>
     <param>
       <key>comment</key>
@@ -480,7 +543,7 @@ GFSK modulation</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(216, 168)</value>
+      <value>(224, 172)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -523,7 +586,7 @@ than BW of signal itself.</value>
     </param>
     <param>
       <key>value</key>
-      <value>20e6</value>
+      <value>4e6</value>
     </param>
   </block>
   <block>
@@ -748,7 +811,7 @@ squelch</value>
     </param>
     <param>
       <key>freq</key>
-      <value>-carrier_freq</value>
+      <value>-carrier_freq+offset_freq</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -858,7 +921,7 @@ squelch</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1682,7 +1745,7 @@ this library.</value>
     </param>
     <param>
       <key>freq0</key>
-      <value>carrier_freq</value>
+      <value>430e6</value>
     </param>
     <param>
       <key>if_gain0</key>
@@ -2701,7 +2764,7 @@ this library.</value>
     </param>
     <param>
       <key>freq0</key>
-      <value>carrier_freq</value>
+      <value>430e6</value>
     </param>
     <param>
       <key>gain_mode0</key>
@@ -4139,7 +4202,7 @@ this library.</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>

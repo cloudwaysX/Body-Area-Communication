@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Msk Hackrf
-# Generated: Tue Jun 20 17:45:27 2017
+# Title: Msk Hackrf2
+# Generated: Fri Jun 23 16:44:49 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -25,6 +25,7 @@ from gnuradio import filter
 from gnuradio import gr
 from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
+from gnuradio.qtgui import Range, RangeWidget
 from grc_gnuradio import blks2 as grc_blks2
 import argparse
 import math
@@ -34,7 +35,6 @@ import sys
 import threading
 import time
 from gnuradio import qtgui
-
 def argument_parser():
     parser = argparse.ArgumentParser(description='Process some BAN constrains.')
     parser.add_argument('--GLFSR_degree',type=int,
@@ -42,24 +42,23 @@ def argument_parser():
     parser.add_argument('--rand_seed',type=int,
                     help='seed to generate the pseudo random GLFSR and noise',default=1)
     parser.add_argument('--RX_decimation',type=int,
-                    help='Decimation number at RX to downsample and LPF',default=100)
+                    help='Decimation number at RX to downsample and LPF',default=50)
     parser.add_argument('--samp_rate',type=float,
-                    help='sample rate',default=20e6)
+                    help='sample rate',default=4e6)
     parser.add_argument('--dummy',type=int,
-                    help='a factor to control the frequncy deviation, 1e5/dummy',default=10)
+                    help='a factor to control the frequncy deviation, 1e5/dummy',default=5)
     parser.add_argument('--carrier_freq',type=int,
-                    help='carrier frequncy',default=1.75e6)
+                    help='carrier frequncy',default=270e3)
     parser.add_argument('--BER_windowSize',type=int,
                     help='number of the points you want to calcualte the bit error rate',default=100)
     return parser 
 
-
-class MSK_hackrf(gr.top_block, Qt.QWidget):
+class MSK_hackrf2(gr.top_block, Qt.QWidget):
 
     def __init__(self, hdr_format=digital.header_format_default(digital.packet_utils.default_access_code, 0),options = argument_parser().parse_args()):
-        gr.top_block.__init__(self, "Msk Hackrf")
+        gr.top_block.__init__(self, "Msk Hackrf2")
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Msk Hackrf")
+        self.setWindowTitle("Msk Hackrf2")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -77,7 +76,7 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "MSK_hackrf")
+        self.settings = Qt.QSettings("GNU Radio", "MSK_hackrf2")
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
         ##################################################
@@ -90,25 +89,29 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
         ##################################################
         self.dummy = dummy = options.dummy
         self.samp_rate = samp_rate = options.samp_rate
-        self.fsk_deviation_hz = fsk_deviation_hz = 1e5/dummy
-        self.nfilts = nfilts = 64
+        self.fsk_deviation_hz = fsk_deviation_hz = 2e4/dummy
+        self.nfilts = nfilts = 32
         self.SPS = SPS = int(samp_rate/fsk_deviation_hz/4)
         self.RX_decimation = RX_decimation = options.RX_decimation
-        self.EBW = EBW = .05
+        self.EBW = EBW = .35
         self.rand_seed = rand_seed = options.rand_seed
         self.delay = delay = 0
         self.carrier_freq = carrier_freq = options.carrier_freq
+        self.offset_freq = offset_freq = 5050
 
         self.RRC_filter_taps = RRC_filter_taps = firdes.root_raised_cosine(nfilts, nfilts, 1.0, EBW, 5*SPS*nfilts/RX_decimation)
 
-        self.GLFSR_degree = GLFSR_degree = options.GLFSR_degree
+        self.GLFSR_degree = GLFSR_degree = 3
         self.FindDelay = FindDelay = 0
-        self.BER_windowSize = BER_windowSize = options.BER_windowSize
+        self.BER_windowSize = BER_windowSize = 100
 
         ##################################################
         # Blocks
         ##################################################
         self.probe_BER = blocks.probe_signal_f()
+        self._offset_freq_range = Range(-20e3, 20e3, 1e3, 5050, 200)
+        self._offset_freq_win = RangeWidget(self._offset_freq_range, self.set_offset_freq, "offset_freq", "counter_slider", float)
+        self.top_layout.addWidget(self._offset_freq_win)
         self.rational_resampler_xxx_0_0 = filter.rational_resampler_ccc(
                 interpolation=1,
                 decimation=RX_decimation,
@@ -117,7 +120,7 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
         )
         self.osmosdr_source_0 = osmosdr.source( args="numchan=" + str(1) + " " + 'hackrf=2226255f' )
         self.osmosdr_source_0.set_sample_rate(samp_rate)
-        self.osmosdr_source_0.set_center_freq(carrier_freq, 0)
+        self.osmosdr_source_0.set_center_freq(430e6, 0)
         self.osmosdr_source_0.set_freq_corr(0, 0)
         self.osmosdr_source_0.set_dc_offset_mode(0, 0)
         self.osmosdr_source_0.set_iq_balance_mode(0, 0)
@@ -130,9 +133,9 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
 
         self.osmosdr_sink_0 = osmosdr.sink( args="numchan=" + str(1) + " " + 'hackrf=232a2c5f' )
         self.osmosdr_sink_0.set_sample_rate(samp_rate)
-        self.osmosdr_sink_0.set_center_freq(carrier_freq, 0)
+        self.osmosdr_sink_0.set_center_freq(430e6, 0)
         self.osmosdr_sink_0.set_freq_corr(0, 0)
-        self.osmosdr_sink_0.set_gain(0, 0)
+        self.osmosdr_sink_0.set_gain(1, 0)
         self.osmosdr_sink_0.set_if_gain(16, 0)
         self.osmosdr_sink_0.set_bb_gain(16, 0)
         self.osmosdr_sink_0.set_antenna('', 0)
@@ -155,7 +158,7 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
             win_size=BER_windowSize,
             bits_per_symbol=1,
         )
-        self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, -carrier_freq, 1, 0)
+        self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, -carrier_freq+offset_freq, 1, 0)
         self.analog_quadrature_demod_cf_0 = analog.quadrature_demod_cf(samp_rate/(2*math.pi*fsk_deviation_hz/8.0)/(RX_decimation))
         self.analog_pwr_squelch_xx_0_0 = analog.pwr_squelch_cc(-60, .01, 0, True)
         self.analog_feedforward_agc_cc_0 = analog.feedforward_agc_cc(1024, 1.0)
@@ -205,7 +208,7 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
         self.connect((self.rational_resampler_xxx_0_0, 0), (self.analog_pwr_squelch_xx_0_0, 0))
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "MSK_hackrf")
+        self.settings = Qt.QSettings("GNU Radio", "MSK_hackrf2")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
@@ -220,7 +223,7 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
 
     def set_dummy(self, dummy):
         self.dummy = dummy
-        self.set_fsk_deviation_hz(1e5/self.dummy)
+        self.set_fsk_deviation_hz(2e4/self.dummy)
 
     def get_samp_rate(self):
         return self.samp_rate
@@ -275,6 +278,13 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
     def set_rand_seed(self, rand_seed):
         self.rand_seed = rand_seed
 
+    def get_offset_freq(self):
+        return self.offset_freq
+
+    def set_offset_freq(self, offset_freq):
+        self.offset_freq = offset_freq
+        self.analog_sig_source_x_0.set_frequency(-self.carrier_freq+self.offset_freq)
+
     def get_noise_amp(self):
         return self.noise_amp
 
@@ -293,10 +303,8 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
 
     def set_carrier_freq(self, carrier_freq):
         self.carrier_freq = carrier_freq
-        self.osmosdr_source_0.set_center_freq(self.carrier_freq, 0)
-        self.osmosdr_sink_0.set_center_freq(self.carrier_freq, 0)
         self.digital_chunks_to_symbols_xx_0_0_0_0_0.set_symbol_table(((2*3.14*self.carrier_freq-2*3.14*self.fsk_deviation_hz,2*3.14*self.carrier_freq+2*3.14*self.fsk_deviation_hz)))
-        self.analog_sig_source_x_0.set_frequency(-self.carrier_freq)
+        self.analog_sig_source_x_0.set_frequency(-self.carrier_freq+self.offset_freq)
 
     def get_RRC_filter_taps(self):
         return self.RRC_filter_taps
@@ -323,12 +331,10 @@ class MSK_hackrf(gr.top_block, Qt.QWidget):
     def set_BER_windowSize(self, BER_windowSize):
         self.BER_windowSize = BER_windowSize
 
-def argument_parser():
-    parser = OptionParser(usage="%prog: [options]", option_class=eng_option)
-    return parser
 
 
-def main(top_block_cls=MSK_hackrf, options=None):
+def main(top_block_cls=MSK_hackrf2):
+
 
     from distutils.version import StrictVersion
     if StrictVersion(Qt.qVersion()) >= StrictVersion("4.5.0"):
@@ -353,7 +359,6 @@ def main(top_block_cls=MSK_hackrf, options=None):
 
     tb.start()
     tb.show()
-
 
     def quitting():
         tb.stop()
