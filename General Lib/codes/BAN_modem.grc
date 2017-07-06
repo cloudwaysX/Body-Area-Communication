@@ -10,7 +10,7 @@
     </param>
     <param>
       <key>window_size</key>
-      <value></value>
+      <value>(2048,2048)</value>
     </param>
     <param>
       <key>category</key>
@@ -85,104 +85,6 @@
     <key>variable</key>
     <param>
       <key>comment</key>
-      <value>Excess Band Width:(sharpness the cut-off edge)
-0 is the sharpest</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(264, 756)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>EBW</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>0.35</value>
-    </param>
-  </block>
-  <block>
-    <key>variable_rrc_filter_taps</key>
-    <param>
-      <key>comment</key>
-      <value>Root raised cosine definition.</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha</key>
-      <value>EBW</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(8, 820)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>gain</key>
-      <value>nfilts</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>RRC_filter_taps</value>
-    </param>
-    <param>
-      <key>ntaps</key>
-      <value>5*SPS*nfilts/RX_decimation</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>nfilts</value>
-    </param>
-    <param>
-      <key>sym_rate</key>
-      <value>1.0</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(160, 828)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>nfilts</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>32</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
       <value>This is the offset frequncy for TX/RX.
 Required &gt; 0Hz.
 Required not overlap with other frequnency in multiple channels.</value>
@@ -193,7 +95,7 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(256, 380)</value>
+      <value>(264, 244)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -216,17 +118,15 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>comment</key>
-      <value>Index Number of GFSK.
-Index = 1 is MSK.
-Lower index means narrow BW but maybe less accurate.</value>
+      <value>Zero-centered Bandwidth</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(376, 876)</value>
+      <value>(8, 212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -234,7 +134,7 @@ Lower index means narrow BW but maybe less accurate.</value>
     </param>
     <param>
       <key>id</key>
-      <value>FSK_index_num</value>
+      <value>BandWidth</value>
     </param>
     <param>
       <key>label</key>
@@ -250,7 +150,7 @@ Lower index means narrow BW but maybe less accurate.</value>
     </param>
     <param>
       <key>value</key>
-      <value>2</value>
+      <value>int(5e3)*2</value>
     </param>
   </block>
   <block>
@@ -273,7 +173,7 @@ Lower index means narrow BW but maybe less accurate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(840, 264)</value>
+      <value>(888, 468)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -284,32 +184,24 @@ Lower index means narrow BW but maybe less accurate.</value>
       <value>0</value>
     </param>
     <param>
-      <key>hdr_format</key>
-      <value>digital.header_format_default(digital.packet_utils.default_access_code, 0)</value>
-    </param>
-    <param>
       <key>id</key>
       <value>MSK_FSK_demod_0</value>
     </param>
     <param>
-      <key>RX_decimation</key>
-      <value>RX_decimation</value>
+      <key>maxoutbuf</key>
+      <value>0</value>
     </param>
     <param>
-      <key>carrier_freq</key>
-      <value>carrier_freq</value>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>RX_decimation</key>
+      <value>100</value>
     </param>
     <param>
       <key>center_freq</key>
       <value>center_freq</value>
-    </param>
-    <param>
-      <key>dst</key>
-      <value>dst</value>
-    </param>
-    <param>
-      <key>file_name</key>
-      <value>'test_out'</value>
     </param>
     <param>
       <key>fsk_deviation_hz</key>
@@ -340,11 +232,11 @@ Lower index means narrow BW but maybe less accurate.</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(848, 76)</value>
+      <value>(888, 92)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -367,24 +259,16 @@ Lower index means narrow BW but maybe less accurate.</value>
       <value>0</value>
     </param>
     <param>
-      <key>carrier_freq</key>
-      <value>carrier_freq</value>
-    </param>
-    <param>
       <key>center_freq</key>
       <value>center_freq</value>
     </param>
     <param>
       <key>fsk_deviation_hz</key>
-      <value>fsk_deviation_hz</value>
+      <value>BandWidth/2</value>
     </param>
     <param>
       <key>index_num</key>
-      <value>FSK_index_num</value>
-    </param>
-    <param>
-      <key>noise_amp</key>
-      <value>noise_amp</value>
+      <value>2</value>
     </param>
     <param>
       <key>samp_rate</key>
@@ -392,7 +276,125 @@ Lower index means narrow BW but maybe less accurate.</value>
     </param>
   </block>
   <block>
-    <key>PSK_mod</key>
+    <key>OOK_demod</key>
+    <param>
+      <key>BW</key>
+      <value>BandWidth</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(896, 828)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>OOK_demod_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>RX_decimation</key>
+      <value>125</value>
+    </param>
+    <param>
+      <key>center_freq</key>
+      <value>center_freq</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>samp_rate</value>
+    </param>
+  </block>
+  <block>
+    <key>OOK_mod</key>
+    <param>
+      <key>BW</key>
+      <value>BandWidth</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(888, 348)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>OOK_mod_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>center_freq</key>
+      <value>center_freq</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>samp_rate</value>
+    </param>
+  </block>
+  <block>
+    <key>PSK_demod</key>
+    <param>
+      <key>BW</key>
+      <value>BandWidth</value>
+    </param>
     <param>
       <key>alias</key>
       <value></value>
@@ -411,11 +413,74 @@ Lower index means narrow BW but maybe less accurate.</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(840, 444)</value>
+      <value>(888, 660)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>PSK_demod_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>RX_decimation</key>
+      <value>50</value>
+    </param>
+    <param>
+      <key>center_freq</key>
+      <value>center_freq</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>samp_rate</value>
+    </param>
+  </block>
+  <block>
+    <key>PSK_mod</key>
+    <param>
+      <key>BW</key>
+      <value>BandWidth</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>my_const</key>
+      <value>digital.constellation_calcdist((digital.psk_2()[0]), (digital.psk_2()[1]), 2, 1).base()</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(888, 228)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -438,24 +503,12 @@ Lower index means narrow BW but maybe less accurate.</value>
       <value>0</value>
     </param>
     <param>
-      <key>SPS</key>
-      <value>200</value>
-    </param>
-    <param>
-      <key>carrier_freq</key>
-      <value>int(270e3)</value>
-    </param>
-    <param>
       <key>center_freq</key>
-      <value>int(100e3)</value>
-    </param>
-    <param>
-      <key>noise_amp</key>
-      <value>0.7</value>
+      <value>center_freq</value>
     </param>
     <param>
       <key>samp_rate</key>
-      <value>int(2e6)</value>
+      <value>samp_rate</value>
     </param>
   </block>
   <block>
@@ -475,7 +528,7 @@ Constrainted by power supply.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(256, 636)</value>
+      <value>(264, 636)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -520,7 +573,7 @@ Use if IF gain is not enough.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(256, 500)</value>
+      <value>(264, 508)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -548,24 +601,32 @@ Use if IF gain is not enough.</value>
     </param>
   </block>
   <block>
-    <key>parameter</key>
+    <key>Ref_Sychronize</key>
     <param>
       <key>alias</key>
       <value></value>
     </param>
     <param>
       <key>comment</key>
-      <value>Receiver decimation factor.
-larger number means lower BW of LPF.
-Must be common divisor of SPS.</value>
+      <value>Sychronize the Reference signal ans Demoded Signal
+Save sychronized signal
+Used for BER check</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 692)</value>
+      <value>(1160, 668)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
     </param>
     <param>
       <key>_rotation</key>
@@ -573,67 +634,23 @@ Must be common divisor of SPS.</value>
     </param>
     <param>
       <key>id</key>
-      <value>RX_decimation</value>
+      <value>Ref_Sychronize_0</value>
     </param>
     <param>
-      <key>label</key>
-      <value></value>
+      <key>dst</key>
+      <value>dst</value>
     </param>
     <param>
-      <key>short_id</key>
-      <value></value>
+      <key>file_name</key>
+      <value>'test_out'</value>
     </param>
     <param>
-      <key>type</key>
-      <value>intx</value>
+      <key>samp_rate</key>
+      <value>samp_rate</value>
     </param>
     <param>
-      <key>value</key>
-      <value>100</value>
-    </param>
-  </block>
-  <block>
-    <key>parameter</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value>Sample per Symbol for PSK/OOK
-Up-sample the generated frequency.</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(160, 900)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>SPS</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value></value>
-    </param>
-    <param>
-      <key>short_id</key>
-      <value></value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>intx</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>200</value>
+      <key>threshold</key>
+      <value>syc_threshold</value>
     </param>
   </block>
   <block>
@@ -656,7 +673,7 @@ Up-sample the generated frequency.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(592, 64)</value>
+      <value>(608, 200)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -692,7 +709,7 @@ Up-sample the generated frequency.</value>
     </param>
     <param>
       <key>interval_ms</key>
-      <value>int(0.2e3)</value>
+      <value>interval_ms</value>
     </param>
     <param>
       <key>message</key>
@@ -700,15 +717,15 @@ Up-sample the generated frequency.</value>
     </param>
     <param>
       <key>message_repeatNum</key>
-      <value>3</value>
+      <value>10</value>
     </param>
     <param>
       <key>samp_rate</key>
-      <value>int(2e6)</value>
+      <value>samp_rate</value>
     </param>
     <param>
       <key>symbol_rate</key>
-      <value>int(2e6)</value>
+      <value>symbol_rate</value>
     </param>
   </block>
   <block>
@@ -728,7 +745,7 @@ Constrainted by power supply.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 636)</value>
+      <value>(264, 892)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -773,7 +790,7 @@ Use if IF gain is not enough.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 500)</value>
+      <value>(264, 756)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -818,7 +835,7 @@ Constrains by transimission device</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(160, 4)</value>
+      <value>(264, 100)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -861,7 +878,7 @@ Constrains by transimission device</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(256, 140)</value>
+      <value>(264, 380)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -885,7 +902,70 @@ Constrains by transimission device</value>
     </param>
     <param>
       <key>value</key>
-      <value>int(10e3)</value>
+      <value>int(30e3)</value>
+    </param>
+  </block>
+  <block>
+    <key>channels_channel_model</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_tags</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>epsilon</key>
+      <value>1.0</value>
+    </param>
+    <param>
+      <key>freq_offset</key>
+      <value>0.0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1160, 220)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>channels_channel_model_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>noise_voltage</key>
+      <value>noise_amp</value>
+    </param>
+    <param>
+      <key>seed</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>taps</key>
+      <value>1.0 + 1.0j</value>
     </param>
   </block>
   <block>
@@ -904,7 +984,7 @@ Constrains by transimission device</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 460)</value>
+      <value>(16, 1052)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -939,50 +1019,6 @@ Constrains by transimission device</value>
     </param>
     <param>
       <key>comment</key>
-      <value>Frequency deviation of GFSK modulation.
-Required to be index*sps*symbol_rate/4.</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(256, 252)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>fsk_deviation_hz</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value></value>
-    </param>
-    <param>
-      <key>short_id</key>
-      <value></value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>intx</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>int(5e3)</value>
-    </param>
-  </block>
-  <block>
-    <key>parameter</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
       <value>Header format definition</value>
     </param>
     <param>
@@ -991,7 +1027,7 @@ Required to be index*sps*symbol_rate/4.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 348)</value>
+      <value>(16, 700)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1036,7 +1072,7 @@ this library.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 580)</value>
+      <value>(168, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1059,6 +1095,51 @@ this library.</value>
     </param>
     <param>
       <key>comment</key>
+      <value>Time interval between each message
+Right now haven't see any influnce on BER
+unit: ms</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(8, 468)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>interval_ms</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>intx</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>int(0.2e3)</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
       <value>Recommend using long message
 to achieve accurate test BER!</value>
     </param>
@@ -1068,7 +1149,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(408, 4)</value>
+      <value>(16, 812)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1088,11 +1169,11 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>type</key>
-      <value></value>
+      <value>string</value>
     </param>
     <param>
       <key>value</key>
-      <value>"Here's an example of how GRC can be used to create a simulation environment. The following flow graph is available as part of the Channel Coding toolbox and was used to demonstrate the capabilities of the included Reed-Muller-Golay code. The original CGRAN server is offline, the code from the channel coding toolbox has been uploaded to github.com/ckuethe/gr-chancoding and is unlikely to work without some work to use newer GNU Radio APIs.A very important thing to observe is the use of the throttle block (the first block after the random source). This block only allows a certain amount of bits to pass the block (this is not an exact rate, but the average rate of bits leaving this block will be the given sampling rate). If you omit the throttle block, you risk your CPU running the flow graph at full speed ."</value>
+      <value>I'm currently using two USRP X310, one for transmitting and another one for receiving. Programming is done using GNU Radio. I want to transmit a chirp signal to find the distance between both USRPs.I'm currently using two USRP X310, one for transmitting and another one for receiving. Programming is done using GNU Radio. I want to transmit a chirp </value>
     </param>
   </block>
   <block>
@@ -1111,7 +1192,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(416, 116)</value>
+      <value>(16, 940)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1135,7 +1216,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>value</key>
-      <value>0.6</value>
+      <value>0.0</value>
     </param>
   </block>
   <block>
@@ -2058,7 +2139,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1088, 68)</value>
+      <value>(1352, 204)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3457,7 +3538,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(608, 256)</value>
+      <value>(648, 624)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3578,7 +3659,7 @@ Less sample rate cause less power.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 76)</value>
+      <value>(8, 84)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3613,6 +3694,49 @@ Less sample rate cause less power.</value>
     </param>
     <param>
       <key>comment</key>
+      <value>Number of errors allowed in access code</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(16, 604)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>syc_threshold</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>10</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
       <value>The symbol rate of the message.
 Depends on the actual user case
 Required to be &lt;= sample rate.</value>
@@ -3623,7 +3747,7 @@ Required to be &lt;= sample rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 204)</value>
+      <value>(8, 324)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3651,14 +3775,38 @@ Required to be &lt;= sample rate.</value>
     </param>
   </block>
   <connection>
+    <source_block_id>MSK_FSK_demod_0</source_block_id>
+    <sink_block_id>Ref_Sychronize_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>MSK_FSK_mod_0</source_block_id>
-    <sink_block_id>osmosdr_sink_0</sink_block_id>
+    <sink_block_id>channels_channel_model_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>OOK_demod_0</source_block_id>
+    <sink_block_id>Ref_Sychronize_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>OOK_mod_0</source_block_id>
+    <sink_block_id>channels_channel_model_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>PSK_demod_0</source_block_id>
+    <sink_block_id>Ref_Sychronize_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>PSK_mod_0</source_block_id>
-    <sink_block_id>osmosdr_sink_0</sink_block_id>
+    <sink_block_id>channels_channel_model_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3670,13 +3818,37 @@ Required to be &lt;= sample rate.</value>
   </connection>
   <connection>
     <source_block_id>Signal_Generator_0</source_block_id>
+    <sink_block_id>OOK_mod_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>Signal_Generator_0</source_block_id>
     <sink_block_id>PSK_mod_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>channels_channel_model_0</source_block_id>
+    <sink_block_id>osmosdr_sink_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>osmosdr_source_0</source_block_id>
     <sink_block_id>MSK_FSK_demod_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>osmosdr_source_0</source_block_id>
+    <sink_block_id>OOK_demod_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>osmosdr_source_0</source_block_id>
+    <sink_block_id>PSK_demod_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
