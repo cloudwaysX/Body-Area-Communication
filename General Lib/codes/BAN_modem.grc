@@ -164,7 +164,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(144, 828)</value>
+      <value>(160, 828)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -209,6 +209,51 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
   </block>
   <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>Index Number of GFSK.
+Index = 1 is MSK.
+Lower index means narrow BW but maybe less accurate.</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(376, 876)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>FSK_index_num</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>intx</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>2</value>
+    </param>
+  </block>
+  <block>
     <key>MSK_FSK_demod</key>
     <param>
       <key>alias</key>
@@ -228,7 +273,7 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(848, 264)</value>
+      <value>(840, 264)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -251,10 +296,6 @@ Required not overlap with other frequnency in multiple channels.</value>
       <value>RX_decimation</value>
     </param>
     <param>
-      <key>SPS</key>
-      <value>SPS</value>
-    </param>
-    <param>
       <key>carrier_freq</key>
       <value>carrier_freq</value>
     </param>
@@ -273,6 +314,10 @@ Required not overlap with other frequnency in multiple channels.</value>
     <param>
       <key>fsk_deviation_hz</key>
       <value>int(5e3)</value>
+    </param>
+    <param>
+      <key>index_num</key>
+      <value>2</value>
     </param>
     <param>
       <key>samp_rate</key>
@@ -295,11 +340,11 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(848, 32)</value>
+      <value>(848, 76)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -308,10 +353,6 @@ Required not overlap with other frequnency in multiple channels.</value>
     <param>
       <key>_rotation</key>
       <value>0</value>
-    </param>
-    <param>
-      <key>hdr_format</key>
-      <value>digital.header_format_default(digital.packet_utils.default_access_code, 0)</value>
     </param>
     <param>
       <key>id</key>
@@ -326,36 +367,20 @@ Required not overlap with other frequnency in multiple channels.</value>
       <value>0</value>
     </param>
     <param>
-      <key>SPS</key>
-      <value>200</value>
-    </param>
-    <param>
-      <key>TX_IF_gain</key>
-      <value>int(16)</value>
-    </param>
-    <param>
-      <key>TX_RF_gain</key>
-      <value>int(0)</value>
-    </param>
-    <param>
       <key>carrier_freq</key>
-      <value>int(270e3)</value>
+      <value>carrier_freq</value>
     </param>
     <param>
       <key>center_freq</key>
-      <value>int(10e3)</value>
+      <value>center_freq</value>
     </param>
     <param>
       <key>fsk_deviation_hz</key>
-      <value>int(5e3)</value>
+      <value>fsk_deviation_hz</value>
     </param>
     <param>
       <key>index_num</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>message_repeatNum</key>
-      <value>5</value>
+      <value>FSK_index_num</value>
     </param>
     <param>
       <key>noise_amp</key>
@@ -363,10 +388,73 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>samp_rate</key>
-      <value>int(2e6)</value>
+      <value>samp_rate</value>
+    </param>
+  </block>
+  <block>
+    <key>PSK_mod</key>
+    <param>
+      <key>alias</key>
+      <value></value>
     </param>
     <param>
-      <key>symbol_rate</key>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>my_const</key>
+      <value>digital.constellation_calcdist((digital.psk_2()[0]), (digital.psk_2()[1]), 2, 1).base()</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(840, 444)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>PSK_mod_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>SPS</key>
+      <value>200</value>
+    </param>
+    <param>
+      <key>carrier_freq</key>
+      <value>int(270e3)</value>
+    </param>
+    <param>
+      <key>center_freq</key>
+      <value>int(100e3)</value>
+    </param>
+    <param>
+      <key>noise_amp</key>
+      <value>0.7</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
       <value>int(2e6)</value>
     </param>
   </block>
@@ -512,7 +600,7 @@ Must be common divisor of SPS.</value>
     </param>
     <param>
       <key>comment</key>
-      <value>Sample per Symbol.
+      <value>Sample per Symbol for PSK/OOK
 Up-sample the generated frequency.</value>
     </param>
     <param>
@@ -521,7 +609,7 @@ Up-sample the generated frequency.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(168, 900)</value>
+      <value>(160, 900)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -568,7 +656,7 @@ Up-sample the generated frequency.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(624, 64)</value>
+      <value>(592, 64)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -1047,7 +1135,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>value</key>
-      <value>1.6</value>
+      <value>0.6</value>
     </param>
   </block>
   <block>
@@ -3369,7 +3457,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(632, 256)</value>
+      <value>(608, 256)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3569,8 +3657,20 @@ Required to be &lt;= sample rate.</value>
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>PSK_mod_0</source_block_id>
+    <sink_block_id>osmosdr_sink_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>Signal_Generator_0</source_block_id>
     <sink_block_id>MSK_FSK_mod_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>Signal_Generator_0</source_block_id>
+    <sink_block_id>PSK_mod_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
