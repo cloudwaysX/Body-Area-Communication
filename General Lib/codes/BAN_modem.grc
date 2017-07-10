@@ -168,8 +168,12 @@ Required not overlap with other frequnency in multiple channels.</value>
       <value></value>
     </param>
     <param>
+      <key>EBW</key>
+      <value>0.35</value>
+    </param>
+    <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -215,6 +219,10 @@ Required not overlap with other frequnency in multiple channels.</value>
       <key>samp_rate</key>
       <value>samp_rate</value>
     </param>
+    <param>
+      <key>symbol_rate</key>
+      <value>symbol_rate</value>
+    </param>
   </block>
   <block>
     <key>MSK_FSK_mod</key>
@@ -232,7 +240,7 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -273,6 +281,10 @@ Required not overlap with other frequnency in multiple channels.</value>
     <param>
       <key>samp_rate</key>
       <value>samp_rate</value>
+    </param>
+    <param>
+      <key>symbol_rate</key>
+      <value>symbol_rate</value>
     </param>
   </block>
   <block>
@@ -333,6 +345,10 @@ Required not overlap with other frequnency in multiple channels.</value>
       <key>samp_rate</key>
       <value>samp_rate</value>
     </param>
+    <param>
+      <key>symbol_rate</key>
+      <value>int(2e6)</value>
+    </param>
   </block>
   <block>
     <key>OOK_mod</key>
@@ -358,7 +374,7 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(888, 348)</value>
+      <value>(896, 356)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -388,6 +404,10 @@ Required not overlap with other frequnency in multiple channels.</value>
       <key>samp_rate</key>
       <value>samp_rate</value>
     </param>
+    <param>
+      <key>symbol_rate</key>
+      <value>int(2e6)</value>
+    </param>
   </block>
   <block>
     <key>PSK_demod</key>
@@ -412,8 +432,12 @@ Required not overlap with other frequnency in multiple channels.</value>
       <value></value>
     </param>
     <param>
+      <key>EBW</key>
+      <value>1</value>
+    </param>
+    <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -451,6 +475,10 @@ Required not overlap with other frequnency in multiple channels.</value>
       <key>samp_rate</key>
       <value>samp_rate</value>
     </param>
+    <param>
+      <key>symbol_rate</key>
+      <value>int(2e6)</value>
+    </param>
   </block>
   <block>
     <key>PSK_mod</key>
@@ -475,12 +503,16 @@ Required not overlap with other frequnency in multiple channels.</value>
       <value></value>
     </param>
     <param>
+      <key>EBW</key>
+      <value>1</value>
+    </param>
+    <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(888, 228)</value>
+      <value>(888, 212)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -509,6 +541,10 @@ Required not overlap with other frequnency in multiple channels.</value>
     <param>
       <key>samp_rate</key>
       <value>samp_rate</value>
+    </param>
+    <param>
+      <key>symbol_rate</key>
+      <value>int(2e6)</value>
     </param>
   </block>
   <block>
@@ -618,7 +654,7 @@ Used for BER check</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -717,7 +753,7 @@ Used for BER check</value>
     </param>
     <param>
       <key>message_repeatNum</key>
-      <value>10</value>
+      <value>8</value>
     </param>
     <param>
       <key>samp_rate</key>
@@ -1027,7 +1063,7 @@ Constrains by transimission device</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(16, 700)</value>
+      <value>(8, 700)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1129,7 +1165,7 @@ unit: ms</value>
     </param>
     <param>
       <key>value</key>
-      <value>int(0.2e3)</value>
+      <value>int(0.8e3)</value>
     </param>
   </block>
   <block>
@@ -1173,7 +1209,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>value</key>
-      <value>I'm currently using two USRP X310, one for transmitting and another one for receiving. Programming is done using GNU Radio. I want to transmit a chirp signal to find the distance between both USRPs.I'm currently using two USRP X310, one for transmitting and another one for receiving. Programming is done using GNU Radio. I want to transmit a chirp </value>
+      <value>hello world</value>
     </param>
   </block>
   <block>
@@ -3702,7 +3738,7 @@ Less sample rate cause less power.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(16, 604)</value>
+      <value>(8, 604)</value>
     </param>
     <param>
       <key>_rotation</key>

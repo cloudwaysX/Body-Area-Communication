@@ -82,33 +82,6 @@
     </param>
   </block>
   <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(216, 508)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>EBW</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>.35</value>
-    </param>
-  </block>
-  <block>
     <key>variable_rrc_filter_taps</key>
     <param>
       <key>comment</key>
@@ -165,7 +138,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 452)</value>
+      <value>(8, 604)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -177,7 +150,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>value</key>
-      <value>int(samp_rate/BW)</value>
+      <value>int(symbol_rate/BW)</value>
     </param>
   </block>
   <block>
@@ -192,7 +165,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(216, 580)</value>
+      <value>(216, 604)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -223,7 +196,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 340)</value>
+      <value>(8, 492)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -248,6 +221,50 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     <param>
       <key>value</key>
       <value>int(5e3)*2</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>Excess Band Width
+Totoal BW = BW*(1+EBW)</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(216, 492)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>EBW</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>0.35</value>
     </param>
   </block>
   <block>
@@ -488,7 +505,7 @@ better to be &gt;= 30K</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 212)</value>
+      <value>(8, 364)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1594,6 +1611,51 @@ Less sample rate cause less power.</value>
     <param>
       <key>id</key>
       <value>samp_rate</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>intx</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>int(2e6)</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>The symbol rate of the message.
+Depends on the actual user case
+Required to be &lt;= sample rate.</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(8, 220)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>symbol_rate</value>
     </param>
     <param>
       <key>label</key>

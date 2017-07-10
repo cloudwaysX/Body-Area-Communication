@@ -95,7 +95,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 468)</value>
+      <value>(8, 596)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -107,7 +107,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>value</key>
-      <value>2000</value>
+      <value>symbol_rate/BW*10</value>
     </param>
   </block>
   <block>
@@ -126,7 +126,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 356)</value>
+      <value>(8, 484)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -586,7 +586,7 @@ better to be &gt;= 30K</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 228)</value>
+      <value>(8, 356)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1421,6 +1421,51 @@ Less sample rate cause less power.</value>
     <param>
       <key>id</key>
       <value>samp_rate</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>intx</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>int(2e6)</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>The symbol rate of the message.
+Depends on the actual user case
+Required to be &lt;= sample rate.</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(8, 220)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>symbol_rate</value>
     </param>
     <param>
       <key>label</key>
