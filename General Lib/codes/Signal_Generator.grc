@@ -129,7 +129,7 @@ Dst(Destination) + file_name</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(528, 460)</value>
+      <value>(552, 460)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -227,7 +227,7 @@ Dst(Destination) + file_name</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(896, 188)</value>
+      <value>(672, 188)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -247,7 +247,7 @@ Dst(Destination) + file_name</value>
     </param>
     <param>
       <key>num_items</key>
-      <value>len(message)*message_repeatNum</value>
+      <value>len(message)*(message_repeatNum+1)</value>
     </param>
     <param>
       <key>type</key>
@@ -475,7 +475,7 @@ Check if the repeated time is right.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(560, 260)</value>
+      <value>(552, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -602,6 +602,57 @@ Check if the repeated time is right.</value>
     <param>
       <key>minoutbuf</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>byte</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_skiphead</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(728, 268)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>180</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_skiphead_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_items</key>
+      <value>len(message)*1</value>
     </param>
     <param>
       <key>type</key>
@@ -797,7 +848,7 @@ Check if the repeated time is right.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(496, 732)</value>
+      <value>(520, 732)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -973,7 +1024,7 @@ Check if the repeated time is right.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(368, 364)</value>
+      <value>(400, 364)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1098,7 +1149,7 @@ unit: ms</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(184, 316)</value>
+      <value>(184, 332)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1977,7 +2028,7 @@ Required to be &lt;= sample rate.</value>
   </connection>
   <connection>
     <source_block_id>blocks_head_0</source_block_id>
-    <sink_block_id>blocks_repack_bits_bb_0_0_0</sink_block_id>
+    <sink_block_id>blocks_skiphead_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -1988,6 +2039,12 @@ Required to be &lt;= sample rate.</value>
     <sink_key>1</sink_key>
   </connection>
   <connection>
+    <source_block_id>blocks_head_0</source_block_id>
+    <sink_block_id>digital_protocol_formatter_bb_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>blocks_message_strobe_0_0</source_block_id>
     <sink_block_id>blocks_pdu_to_tagged_stream_1</sink_block_id>
     <source_key>strobe</source_key>
@@ -1996,12 +2053,6 @@ Required to be &lt;= sample rate.</value>
   <connection>
     <source_block_id>blocks_pdu_to_tagged_stream_1</source_block_id>
     <sink_block_id>blocks_head_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_pdu_to_tagged_stream_1</source_block_id>
-    <sink_block_id>digital_protocol_formatter_bb_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -2038,6 +2089,12 @@ Required to be &lt;= sample rate.</value>
   <connection>
     <source_block_id>blocks_repeat_0</source_block_id>
     <sink_block_id>generatedSignal</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_skiphead_0</source_block_id>
+    <sink_block_id>blocks_repack_bits_bb_0_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

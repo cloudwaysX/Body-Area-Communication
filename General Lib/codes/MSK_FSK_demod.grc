@@ -82,6 +82,33 @@
     </param>
   </block>
   <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(224, 476)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>EBW</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>00.35</value>
+    </param>
+  </block>
+  <block>
     <key>variable_rrc_filter_taps</key>
     <param>
       <key>comment</key>
@@ -187,50 +214,6 @@ Up-sample the generated frequency.</value>
     </param>
     <param>
       <key>comment</key>
-      <value>Excess Band Width
-Totoal BW = BW*(1+EBW)</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(224, 468)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>EBW</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value></value>
-    </param>
-    <param>
-      <key>short_id</key>
-      <value></value>
-    </param>
-    <param>
-      <key>type</key>
-      <value></value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>0.35</value>
-    </param>
-  </block>
-  <block>
-    <key>parameter</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
       <value>Receiver decimation factor.
 larger number means lower BW of LPF.
 Must be common divisor of SPS.</value>
@@ -269,114 +252,6 @@ Must be common divisor of SPS.</value>
     </param>
   </block>
   <block>
-    <key>analog_feedforward_agc_cc</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value>Optional 
-AGC (normailze the amplitude)</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1172, 400)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>270</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>analog_feedforward_agc_cc_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_samples</key>
-      <value>1024</value>
-    </param>
-    <param>
-      <key>reference</key>
-      <value>1.0</value>
-    </param>
-  </block>
-  <block>
-    <key>analog_pwr_squelch_xx</key>
-    <param>
-      <key>alpha</key>
-      <value>.01</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value>Optional power
-squelch</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1024, 292)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>gate</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>analog_pwr_squelch_xx_0_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>ramp</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>threshold</key>
-      <value>-60</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-  </block>
-  <block>
     <key>analog_quadrature_demod_cf</key>
     <param>
       <key>alias</key>
@@ -396,7 +271,7 @@ squelch</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(968, 516)</value>
+      <value>(984, 508)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -490,8 +365,8 @@ squelch</value>
     </param>
     <param>
       <key>comment</key>
-      <value>Perform frequency 
-translation (down convert)</value>
+      <value>Down-convert the
+entire frequency</value>
     </param>
     <param>
       <key>affinity</key>
@@ -574,7 +449,7 @@ translation (down convert)</value>
     </param>
     <param>
       <key>value</key>
-      <value>int(10e3)</value>
+      <value>int(30e3)</value>
     </param>
   </block>
   <block>
@@ -585,7 +460,7 @@ translation (down convert)</value>
     </param>
     <param>
       <key>comment</key>
-      <value></value>
+      <value>Convert float to binary</value>
     </param>
     <param>
       <key>affinity</key>
@@ -597,7 +472,7 @@ translation (down convert)</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(584, 568)</value>
+      <value>(584, 560)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -624,7 +499,9 @@ translation (down convert)</value>
     </param>
     <param>
       <key>comment</key>
-      <value>Clock sync</value>
+      <value>Clock sync and
+recover the original 
+symbol rate</value>
     </param>
     <param>
       <key>affinity</key>
@@ -640,7 +517,7 @@ translation (down convert)</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(744, 468)</value>
+      <value>(744, 460)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -743,7 +620,7 @@ Required to be index*sps*symbol_rate/4.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(472, 564)</value>
+      <value>(448, 556)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -975,7 +852,7 @@ Lower index means narrow BW but maybe less accurate.</value>
     </param>
     <param>
       <key>label1</key>
-      <value></value>
+      <value>Received Modulated Signal</value>
     </param>
     <param>
       <key>width1</key>
@@ -1007,7 +884,7 @@ Lower index means narrow BW but maybe less accurate.</value>
     </param>
     <param>
       <key>label2</key>
-      <value></value>
+      <value>Zero Centered received Modulated Signal</value>
     </param>
     <param>
       <key>width2</key>
@@ -1139,7 +1016,7 @@ Lower index means narrow BW but maybe less accurate.</value>
     </param>
     <param>
       <key>nconnections</key>
-      <value>1</value>
+      <value>2</value>
     </param>
     <param>
       <key>showports</key>
@@ -1502,7 +1379,8 @@ After the Low Pass Filter</value>
     </param>
     <param>
       <key>comment</key>
-      <value></value>
+      <value>Down-sampling.
+Equivalent to Low-pass Filter</value>
     </param>
     <param>
       <key>affinity</key>
@@ -1644,18 +1522,6 @@ Required to be &lt;= sample rate.</value>
     </param>
   </block>
   <connection>
-    <source_block_id>analog_feedforward_agc_cc_0</source_block_id>
-    <sink_block_id>analog_quadrature_demod_cf_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>analog_pwr_squelch_xx_0_0</source_block_id>
-    <sink_block_id>analog_feedforward_agc_cc_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
     <source_block_id>analog_quadrature_demod_cf_0</source_block_id>
     <sink_block_id>digital_pfb_clock_sync_xxx_0</sink_block_id>
     <source_key>0</source_key>
@@ -1664,6 +1530,12 @@ Required to be &lt;= sample rate.</value>
   <connection>
     <source_block_id>analog_sig_source_x_0</source_block_id>
     <sink_block_id>blocks_multiply_xx_1</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>1</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_multiply_xx_1</source_block_id>
+    <sink_block_id>qtgui_freq_sink_x_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>1</sink_key>
   </connection>
@@ -1699,7 +1571,7 @@ Required to be &lt;= sample rate.</value>
   </connection>
   <connection>
     <source_block_id>rational_resampler_xxx_0_0</source_block_id>
-    <sink_block_id>analog_pwr_squelch_xx_0_0</sink_block_id>
+    <sink_block_id>analog_quadrature_demod_cf_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

@@ -168,16 +168,12 @@ Required not overlap with other frequnency in multiple channels.</value>
       <value></value>
     </param>
     <param>
-      <key>EBW</key>
-      <value>0.35</value>
-    </param>
-    <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(888, 468)</value>
+      <value>(904, 364)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -240,11 +236,11 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(888, 92)</value>
+      <value>(912, 12)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -279,6 +275,10 @@ Required not overlap with other frequnency in multiple channels.</value>
       <value>2</value>
     </param>
     <param>
+      <key>interval_ms</key>
+      <value>interval_ms</value>
+    </param>
+    <param>
       <key>samp_rate</key>
       <value>samp_rate</value>
     </param>
@@ -311,7 +311,7 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(896, 828)</value>
+      <value>(904, 636)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -374,7 +374,7 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(896, 356)</value>
+      <value>(912, 268)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -433,15 +433,15 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>EBW</key>
-      <value>1</value>
+      <value>0.35</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(888, 660)</value>
+      <value>(904, 492)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -504,15 +504,15 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>EBW</key>
-      <value>1</value>
+      <value>0.35</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(888, 212)</value>
+      <value>(912, 140)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -633,7 +633,7 @@ Use if IF gain is not enough.</value>
     </param>
     <param>
       <key>value</key>
-      <value>0</value>
+      <value>14</value>
     </param>
   </block>
   <block>
@@ -658,7 +658,7 @@ Used for BER check</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1160, 668)</value>
+      <value>(1248, 516)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -678,7 +678,7 @@ Used for BER check</value>
     </param>
     <param>
       <key>file_name</key>
-      <value>'test_out'</value>
+      <value>'10B_100m_noise9_004_galv_po3_out_f700'</value>
     </param>
     <param>
       <key>samp_rate</key>
@@ -709,7 +709,7 @@ Used for BER check</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(608, 200)</value>
+      <value>(592, 128)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -741,7 +741,7 @@ Used for BER check</value>
     </param>
     <param>
       <key>file_name</key>
-      <value>'test_in'</value>
+      <value>'10B_100m_noise9_004_galv_po3_in_f700'</value>
     </param>
     <param>
       <key>interval_ms</key>
@@ -753,7 +753,7 @@ Used for BER check</value>
     </param>
     <param>
       <key>message_repeatNum</key>
-      <value>8</value>
+      <value>100</value>
     </param>
     <param>
       <key>samp_rate</key>
@@ -805,7 +805,7 @@ Constrainted by power supply.</value>
     </param>
     <param>
       <key>value</key>
-      <value>16</value>
+      <value>47</value>
     </param>
   </block>
   <block>
@@ -850,7 +850,168 @@ Use if IF gain is not enough.</value>
     </param>
     <param>
       <key>value</key>
+      <value>14</value>
+    </param>
+  </block>
+  <block>
+    <key>analog_sig_source_x</key>
+    <param>
+      <key>amp</key>
+      <value>0.0</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>freq</key>
+      <value>-400e3</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1168, 292)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>analog_sig_source_x_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>offset</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>waveform</key>
+      <value>analog.GR_COS_WAVE</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_add_xx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1376, 224)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_add_xx_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_inputs</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_null_sink</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>bus_conns</key>
+      <value>[[0,],]</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(736, 360)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_null_sink_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>byte</value>
+    </param>
+    <param>
+      <key>num_inputs</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
     </param>
   </block>
   <block>
@@ -895,7 +1056,7 @@ Constrains by transimission device</value>
     </param>
     <param>
       <key>value</key>
-      <value>int(270e3)</value>
+      <value>int(700e3)</value>
     </param>
   </block>
   <block>
@@ -973,7 +1134,7 @@ Constrains by transimission device</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1160, 220)</value>
+      <value>(1184, 148)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1044,7 +1205,7 @@ Constrains by transimission device</value>
     </param>
     <param>
       <key>value</key>
-      <value>C:\Users\cheny\Desktop\</value>
+      <value>C:\Users\cheny\Documents\Body-Area-Communication\data\Galvanic3\</value>
     </param>
   </block>
   <block>
@@ -1120,7 +1281,7 @@ this library.</value>
     </param>
     <param>
       <key>import</key>
-      <value>import numpy; from gnuradio import digital</value>
+      <value>import numpy; from gnuradio import digital;import string;import random</value>
     </param>
   </block>
   <block>
@@ -1165,7 +1326,7 @@ unit: ms</value>
     </param>
     <param>
       <key>value</key>
-      <value>int(0.8e3)</value>
+      <value>int(150)</value>
     </param>
   </block>
   <block>
@@ -1209,7 +1370,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>value</key>
-      <value>hello world</value>
+      <value>Helloworld</value>
     </param>
   </block>
   <block>
@@ -2167,7 +2328,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>args</key>
-      <value>hackrf=232a2c5f</value>
+      <value>hackrf=295a8ccf</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -2175,7 +2336,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1352, 204)</value>
+      <value>(1480, 132)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3574,7 +3735,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(648, 624)</value>
+      <value>(656, 472)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3762,7 +3923,7 @@ Less sample rate cause less power.</value>
     </param>
     <param>
       <key>value</key>
-      <value>10</value>
+      <value>30</value>
     </param>
   </block>
   <block>
@@ -3865,8 +4026,26 @@ Required to be &lt;= sample rate.</value>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>channels_channel_model_0</source_block_id>
+    <source_block_id>Signal_Generator_0</source_block_id>
+    <sink_block_id>blocks_null_sink_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>analog_sig_source_x_0</source_block_id>
+    <sink_block_id>blocks_add_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>1</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_add_xx_0</source_block_id>
     <sink_block_id>osmosdr_sink_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>channels_channel_model_0</source_block_id>
+    <sink_block_id>blocks_add_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

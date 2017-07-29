@@ -111,6 +111,33 @@ Required to be (symbol_rate/fsk_deviation_hz/4)*index_num</value>
     </param>
   </block>
   <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(232, 244)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>pream_vec_len</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>int(samp_rate*interval_ms*1e-3/SPS)</value>
+    </param>
+  </block>
+  <block>
     <key>analog_const_source_x</key>
     <param>
       <key>alias</key>
@@ -134,7 +161,7 @@ Required to be (symbol_rate/fsk_deviation_hz/4)*index_num</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 444)</value>
+      <value>(432, 396)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -165,7 +192,9 @@ Required to be (symbol_rate/fsk_deviation_hz/4)*index_num</value>
     </param>
     <param>
       <key>comment</key>
-      <value></value>
+      <value>Convert float number
+to complex. 
+(real world Signal)</value>
     </param>
     <param>
       <key>affinity</key>
@@ -177,7 +206,7 @@ Required to be (symbol_rate/fsk_deviation_hz/4)*index_num</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(632, 416)</value>
+      <value>(624, 368)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -208,8 +237,9 @@ Required to be (symbol_rate/fsk_deviation_hz/4)*index_num</value>
     </param>
     <param>
       <key>comment</key>
-      <value>Establish number of
-samples per symbol</value>
+      <value>Perform up-sampling
+to reduce the 
+maxiumum frequency.</value>
     </param>
     <param>
       <key>affinity</key>
@@ -221,7 +251,7 @@ samples per symbol</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(816, 236)</value>
+      <value>(736, 236)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -273,7 +303,7 @@ of preamble.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(584, 20)</value>
+      <value>(536, 20)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -297,7 +327,7 @@ of preamble.</value>
     </param>
     <param>
       <key>packet_len</key>
-      <value>200</value>
+      <value>int(pream_vec_len)</value>
     </param>
     <param>
       <key>type</key>
@@ -380,7 +410,8 @@ main message.</value>
     </param>
     <param>
       <key>comment</key>
-      <value>FSK modulation</value>
+      <value>Generate cosine wave
+with desired frequency.</value>
     </param>
     <param>
       <key>affinity</key>
@@ -392,7 +423,7 @@ main message.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(632, 220)</value>
+      <value>(416, 220)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -428,7 +459,9 @@ main message.</value>
     <param>
       <key>comment</key>
       <value>Create 1,0,1,0,...
-repeate preamble</value>
+repeate preamble
+to sychronize the receiver
+with data</value>
     </param>
     <param>
       <key>affinity</key>
@@ -440,7 +473,7 @@ repeate preamble</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(416, 12)</value>
+      <value>(376, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -530,7 +563,7 @@ repeate preamble</value>
     </param>
     <param>
       <key>comment</key>
-      <value>Binary 1's and 0's to symbols.</value>
+      <value>Match '1' and '0' to high/low frequency</value>
     </param>
     <param>
       <key>affinity</key>
@@ -704,6 +737,51 @@ Lower index means narrow BW but maybe less accurate.</value>
     </param>
   </block>
   <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>Time interval between each message
+Right now haven't see any influnce on BER
+unit: ms</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(16, 876)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>interval_ms</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>intx</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>int(0.2e3)</value>
+    </param>
+  </block>
+  <block>
     <key>pad_sink</key>
     <param>
       <key>comment</key>
@@ -715,7 +793,7 @@ Lower index means narrow BW but maybe less accurate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(928, 428)</value>
+      <value>(832, 380)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -833,11 +911,11 @@ Lower index means narrow BW but maybe less accurate.</value>
     </param>
     <param>
       <key>fftsize</key>
-      <value>1024/2</value>
+      <value>1024*8</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(912, 668)</value>
+      <value>(848, 700)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -1124,7 +1202,7 @@ Lower index means narrow BW but maybe less accurate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(912, 532)</value>
+      <value>(848, 564)</value>
     </param>
     <param>
       <key>gui_hint</key>
