@@ -107,7 +107,7 @@ Required to be (symbol_rate/fsk_deviation_hz/4)*index_num</value>
     </param>
     <param>
       <key>value</key>
-      <value>int(symbol_rate/fsk_deviation_hz/4)*int(index_num)</value>
+      <value>int(symbol_rate/ideal_BW/2)*int(index_num)</value>
     </param>
   </block>
   <block>
@@ -611,7 +611,7 @@ with data</value>
     </param>
     <param>
       <key>symbol_table</key>
-      <value>(2*3.14*center_freq-2*3.14*fsk_deviation_hz,2*3.14*center_freq+2*3.14*fsk_deviation_hz)</value>
+      <value>(2*3.14*center_freq-2*3.14*ideal_BW/2,2*3.14*center_freq+2*3.14*ideal_BW/2)</value>
     </param>
   </block>
   <block>
@@ -639,7 +639,7 @@ Required to be index*symbol_rate/(4*sps).</value>
     </param>
     <param>
       <key>id</key>
-      <value>fsk_deviation_hz</value>
+      <value>ideal_BW</value>
     </param>
     <param>
       <key>label</key>
@@ -655,7 +655,7 @@ Required to be index*symbol_rate/(4*sps).</value>
     </param>
     <param>
       <key>value</key>
-      <value>int(5e3)</value>
+      <value>int(10e3)</value>
     </param>
   </block>
   <block>

@@ -111,6 +111,59 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
   </block>
   <block>
+    <key>Customed_Packet_Decoder</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>Sychronize the Reference signal ans Demoded Signal
+Save sychronized signal
+Used for BER check</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1184, 516)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>Customed_Packet_Decoder_0</value>
+    </param>
+    <param>
+      <key>dst</key>
+      <value>dst</value>
+    </param>
+    <param>
+      <key>file_name</key>
+      <value>'testout'</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>threshold</key>
+      <value>syc_threshold*0+50</value>
+    </param>
+  </block>
+  <block>
     <key>parameter</key>
     <param>
       <key>alias</key>
@@ -126,7 +179,7 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 212)</value>
+      <value>(128, 212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -134,7 +187,7 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>id</key>
-      <value>BandWidth</value>
+      <value>EBW</value>
     </param>
     <param>
       <key>label</key>
@@ -146,86 +199,11 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>type</key>
-      <value>intx</value>
+      <value>eng_float</value>
     </param>
     <param>
       <key>value</key>
-      <value>int(5e3)*2</value>
-    </param>
-  </block>
-  <block>
-    <key>Customed_Packet_Encoder</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(592, 120)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>hdr_format</key>
-      <value>digital.header_format_default(digital.packet_utils.default_access_code, 0)</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>Customed_Packet_Encoder_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>dst</key>
-      <value>dst</value>
-    </param>
-    <param>
-      <key>file_name</key>
-      <value>'10B_100m_noise9_004_galv_po3_in_f700'</value>
-    </param>
-    <param>
-      <key>interval_ms</key>
-      <value>interval_ms</value>
-    </param>
-    <param>
-      <key>message</key>
-      <value>message</value>
-    </param>
-    <param>
-      <key>message_repeatNum</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>symbol_rate</key>
-      <value>symbol_rate</value>
+      <value>0.35</value>
     </param>
   </block>
   <block>
@@ -279,8 +257,8 @@ Required not overlap with other frequnency in multiple channels.</value>
       <value>center_freq</value>
     </param>
     <param>
-      <key>fsk_deviation_hz</key>
-      <value>int(5e3)</value>
+      <key>ideal_BW</key>
+      <value>ideal_BW</value>
     </param>
     <param>
       <key>index_num</key>
@@ -342,8 +320,8 @@ Required not overlap with other frequnency in multiple channels.</value>
       <value>center_freq</value>
     </param>
     <param>
-      <key>fsk_deviation_hz</key>
-      <value>BandWidth/2</value>
+      <key>ideal_BW</key>
+      <value>ideal_BW</value>
     </param>
     <param>
       <key>index_num</key>
@@ -366,7 +344,7 @@ Required not overlap with other frequnency in multiple channels.</value>
     <key>OOK_demod</key>
     <param>
       <key>BW</key>
-      <value>BandWidth</value>
+      <value>ideal_BW</value>
     </param>
     <param>
       <key>alias</key>
@@ -428,10 +406,6 @@ Required not overlap with other frequnency in multiple channels.</value>
   <block>
     <key>OOK_mod</key>
     <param>
-      <key>BW</key>
-      <value>BandWidth</value>
-    </param>
-    <param>
       <key>alias</key>
       <value></value>
     </param>
@@ -476,20 +450,20 @@ Required not overlap with other frequnency in multiple channels.</value>
       <value>center_freq</value>
     </param>
     <param>
+      <key>ideal_BW</key>
+      <value>ideal_BW</value>
+    </param>
+    <param>
       <key>samp_rate</key>
       <value>samp_rate</value>
     </param>
     <param>
       <key>symbol_rate</key>
-      <value>int(2e6)</value>
+      <value>symbol_rate</value>
     </param>
   </block>
   <block>
     <key>PSK_demod</key>
-    <param>
-      <key>BW</key>
-      <value>BandWidth</value>
-    </param>
     <param>
       <key>alias</key>
       <value></value>
@@ -508,7 +482,7 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>EBW</key>
-      <value>0.35</value>
+      <value>EBW</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -547,6 +521,10 @@ Required not overlap with other frequnency in multiple channels.</value>
       <value>center_freq</value>
     </param>
     <param>
+      <key>ideal_BW</key>
+      <value>ideal_BW</value>
+    </param>
+    <param>
       <key>samp_rate</key>
       <value>samp_rate</value>
     </param>
@@ -557,10 +535,6 @@ Required not overlap with other frequnency in multiple channels.</value>
   </block>
   <block>
     <key>PSK_mod</key>
-    <param>
-      <key>BW</key>
-      <value>BandWidth</value>
-    </param>
     <param>
       <key>alias</key>
       <value></value>
@@ -579,7 +553,7 @@ Required not overlap with other frequnency in multiple channels.</value>
     </param>
     <param>
       <key>EBW</key>
-      <value>0.35</value>
+      <value>EBW</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -612,6 +586,10 @@ Required not overlap with other frequnency in multiple channels.</value>
     <param>
       <key>center_freq</key>
       <value>center_freq</value>
+    </param>
+    <param>
+      <key>ideal_BW</key>
+      <value>ideal_BW</value>
     </param>
     <param>
       <key>samp_rate</key>
@@ -712,16 +690,14 @@ Use if IF gain is not enough.</value>
     </param>
   </block>
   <block>
-    <key>Ref_Sychronize</key>
+    <key>Signal_Generator</key>
     <param>
       <key>alias</key>
       <value></value>
     </param>
     <param>
       <key>comment</key>
-      <value>Sychronize the Reference signal ans Demoded Signal
-Save sychronized signal
-Used for BER check</value>
+      <value></value>
     </param>
     <param>
       <key>affinity</key>
@@ -733,7 +709,7 @@ Used for BER check</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1248, 516)</value>
+      <value>(592, 128)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -744,8 +720,20 @@ Used for BER check</value>
       <value>0</value>
     </param>
     <param>
+      <key>hdr_format</key>
+      <value>digital.header_format_default(digital.packet_utils.default_access_code, 0)</value>
+    </param>
+    <param>
       <key>id</key>
-      <value>Ref_Sychronize_0</value>
+      <value>Signal_Generator_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
     </param>
     <param>
       <key>dst</key>
@@ -753,15 +741,27 @@ Used for BER check</value>
     </param>
     <param>
       <key>file_name</key>
-      <value>'10B_100m_noise9_004_galv_po3_out_f700'</value>
+      <value>'testin'</value>
+    </param>
+    <param>
+      <key>interval_ms</key>
+      <value>interval_ms*10</value>
+    </param>
+    <param>
+      <key>message</key>
+      <value>message</value>
+    </param>
+    <param>
+      <key>message_repeatNum</key>
+      <value>10000</value>
     </param>
     <param>
       <key>samp_rate</key>
       <value>samp_rate</value>
     </param>
     <param>
-      <key>threshold</key>
-      <value>syc_threshold</value>
+      <key>symbol_rate</key>
+      <value>symbol_rate</value>
     </param>
   </block>
   <block>
@@ -854,53 +854,6 @@ Use if IF gain is not enough.</value>
     </param>
   </block>
   <block>
-    <key>blocks_null_sink</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>bus_conns</key>
-      <value>[[0,],]</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(704, 336)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_null_sink_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>byte</value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
     <key>parameter</key>
     <param>
       <key>alias</key>
@@ -942,7 +895,7 @@ Constrains by transimission device</value>
     </param>
     <param>
       <key>value</key>
-      <value>int(700e3)</value>
+      <value>int(1990e3)</value>
     </param>
   </block>
   <block>
@@ -1028,7 +981,7 @@ Constrains by transimission device</value>
     </param>
     <param>
       <key>value</key>
-      <value>C:\Users\yifan\Documents\GitHub\Body-Area-Communication\General Lib\</value>
+      <value>C:\Users\cheny\Documents\Body-Area-Communication\t</value>
     </param>
   </block>
   <block>
@@ -1072,6 +1025,49 @@ Constrains by transimission device</value>
     <param>
       <key>value</key>
       <value>digital.header_format_default(digital.packet_utils.default_access_code, 0)</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>Zero-centered Bandwidth</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(8, 212)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>ideal_BW</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>intx</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>int(5e3)*2</value>
     </param>
   </block>
   <block>
@@ -1193,7 +1189,50 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>value</key>
-      <value>H</value>
+      <value>Helloworld</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>Noise amplitute for simulation.</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(16, 940)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>noise_amp</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>eng_float</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>0.0</value>
     </param>
   </block>
   <block>
@@ -2116,7 +2155,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1184, 132)</value>
+      <value>(1368, 132)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2243,7 +2282,7 @@ to achieve accurate test BER!</value>
     </param>
     <param>
       <key>gain_mode0</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>if_gain0</key>
@@ -3703,7 +3742,7 @@ Less sample rate cause less power.</value>
     </param>
     <param>
       <key>value</key>
-      <value>30</value>
+      <value>10</value>
     </param>
   </block>
   <block>
@@ -3752,32 +3791,8 @@ Required to be &lt;= sample rate.</value>
     </param>
   </block>
   <connection>
-    <source_block_id>Customed_Packet_Encoder_0</source_block_id>
-    <sink_block_id>MSK_FSK_mod_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>Customed_Packet_Encoder_0</source_block_id>
-    <sink_block_id>OOK_mod_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>Customed_Packet_Encoder_0</source_block_id>
-    <sink_block_id>PSK_mod_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>Customed_Packet_Encoder_0</source_block_id>
-    <sink_block_id>blocks_null_sink_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
     <source_block_id>MSK_FSK_demod_0</source_block_id>
-    <sink_block_id>Ref_Sychronize_0</sink_block_id>
+    <sink_block_id>Customed_Packet_Decoder_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3789,7 +3804,7 @@ Required to be &lt;= sample rate.</value>
   </connection>
   <connection>
     <source_block_id>OOK_demod_0</source_block_id>
-    <sink_block_id>Ref_Sychronize_0</sink_block_id>
+    <sink_block_id>Customed_Packet_Decoder_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3801,13 +3816,31 @@ Required to be &lt;= sample rate.</value>
   </connection>
   <connection>
     <source_block_id>PSK_demod_0</source_block_id>
-    <sink_block_id>Ref_Sychronize_0</sink_block_id>
+    <sink_block_id>Customed_Packet_Decoder_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>PSK_mod_0</source_block_id>
     <sink_block_id>osmosdr_sink_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>Signal_Generator_0</source_block_id>
+    <sink_block_id>MSK_FSK_mod_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>Signal_Generator_0</source_block_id>
+    <sink_block_id>OOK_mod_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>Signal_Generator_0</source_block_id>
+    <sink_block_id>PSK_mod_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

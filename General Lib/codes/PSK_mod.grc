@@ -150,7 +150,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>value</key>
-      <value>int(symbol_rate/BW)</value>
+      <value>int(symbol_rate/ideal_BW)</value>
     </param>
   </block>
   <block>
@@ -178,49 +178,6 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     <param>
       <key>value</key>
       <value>32</value>
-    </param>
-  </block>
-  <block>
-    <key>parameter</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value>zero-centered band width</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(8, 492)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>BW</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value></value>
-    </param>
-    <param>
-      <key>short_id</key>
-      <value></value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>intx</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>int(5e3)*2</value>
     </param>
   </block>
   <block>
@@ -695,6 +652,49 @@ better to be &gt;= 30K</value>
     <param>
       <key>modulus</key>
       <value>2</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>zero-centered band width</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(8, 492)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>ideal_BW</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>intx</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>int(5e3)*2</value>
     </param>
   </block>
   <block>

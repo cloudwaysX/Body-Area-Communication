@@ -156,7 +156,8 @@
     <param>
       <key>comment</key>
       <value>Sample per Symbol.
-Up-sample the generated frequency.</value>
+Up-sample the generated frequency.
+Required to be (symbol_rate/fsk_deviation_hz/4)*index_num</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -176,7 +177,7 @@ Up-sample the generated frequency.</value>
     </param>
     <param>
       <key>value</key>
-      <value>int(symbol_rate/fsk_deviation_hz/4)*int(index_num)</value>
+      <value>int(symbol_rate/ideal_BW/2)*int(index_num)</value>
     </param>
   </block>
   <block>
@@ -279,7 +280,7 @@ Must be common divisor of SPS.</value>
     </param>
     <param>
       <key>gain</key>
-      <value>samp_rate/(2*math.pi*fsk_deviation_hz/8.0)/(RX_decimation)</value>
+      <value>samp_rate/(2*math.pi*ideal_BW/4.0)/(RX_decimation)</value>
     </param>
     <param>
       <key>id</key>
@@ -565,50 +566,6 @@ symbol rate</value>
     </param>
   </block>
   <block>
-    <key>parameter</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value>Frequency deviation of GFSK modulation.
-Required to be index*sps*symbol_rate/4.</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(8, 476)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>fsk_deviation_hz</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value></value>
-    </param>
-    <param>
-      <key>short_id</key>
-      <value></value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>intx</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>int(5e3)</value>
-    </param>
-  </block>
-  <block>
     <key>pad_sink</key>
     <param>
       <key>comment</key>
@@ -649,6 +606,50 @@ Required to be index*sps*symbol_rate/4.</value>
     <param>
       <key>vlen</key>
       <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>Frequency deviation of GFSK modulation.
+Required to be index*symbol_rate/(4*sps).</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(8, 476)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>ideal_BW</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>intx</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>int(10e3)</value>
     </param>
   </block>
   <block>
