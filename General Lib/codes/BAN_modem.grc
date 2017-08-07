@@ -257,8 +257,8 @@ Used for BER check</value>
       <value>center_freq</value>
     </param>
     <param>
-      <key>ideal_BW</key>
-      <value>ideal_BW</value>
+      <key>fsk_deviation_hz</key>
+      <value>int(5e3)</value>
     </param>
     <param>
       <key>index_num</key>
@@ -320,8 +320,8 @@ Used for BER check</value>
       <value>center_freq</value>
     </param>
     <param>
-      <key>ideal_BW</key>
-      <value>ideal_BW</value>
+      <key>fsk_deviation_hz</key>
+      <value>int(5e3)</value>
     </param>
     <param>
       <key>index_num</key>
@@ -451,7 +451,7 @@ Used for BER check</value>
     </param>
     <param>
       <key>ideal_BW</key>
-      <value>ideal_BW</value>
+      <value>int(5e3)*2</value>
     </param>
     <param>
       <key>samp_rate</key>
@@ -464,6 +464,10 @@ Used for BER check</value>
   </block>
   <block>
     <key>PSK_demod</key>
+    <param>
+      <key>BW</key>
+      <value>int(5e3)*2</value>
+    </param>
     <param>
       <key>alias</key>
       <value></value>
@@ -521,10 +525,6 @@ Used for BER check</value>
       <value>center_freq</value>
     </param>
     <param>
-      <key>ideal_BW</key>
-      <value>ideal_BW</value>
-    </param>
-    <param>
       <key>samp_rate</key>
       <value>samp_rate</value>
     </param>
@@ -535,6 +535,10 @@ Used for BER check</value>
   </block>
   <block>
     <key>PSK_mod</key>
+    <param>
+      <key>BW</key>
+      <value>int(5e3)*2</value>
+    </param>
     <param>
       <key>alias</key>
       <value></value>
@@ -586,10 +590,6 @@ Used for BER check</value>
     <param>
       <key>center_freq</key>
       <value>center_freq</value>
-    </param>
-    <param>
-      <key>ideal_BW</key>
-      <value>ideal_BW</value>
     </param>
     <param>
       <key>samp_rate</key>

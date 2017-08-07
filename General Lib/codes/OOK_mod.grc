@@ -134,7 +134,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(576, 444)</value>
+      <value>(504, 444)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -185,7 +185,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(712, 28)</value>
+      <value>(664, 44)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -248,7 +248,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(664, 236)</value>
+      <value>(872, 236)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -303,7 +303,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(588, 32)</value>
+      <value>(420, 48)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -350,7 +350,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(808, 416)</value>
+      <value>(736, 416)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -393,7 +393,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(920, 64)</value>
+      <value>(880, 136)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -444,7 +444,7 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1072, 176)</value>
+      <value>(1072, 240)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -495,11 +495,11 @@ noise&lt;SPS&lt;samp_rate/bandWidth</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(644, 72)</value>
+      <value>(528, 164)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>270</value>
+      <value>0</value>
     </param>
     <param>
       <key>id</key>
@@ -658,7 +658,7 @@ this library.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1056, 428)</value>
+      <value>(984, 428)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -701,7 +701,7 @@ this library.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(532, 8)</value>
+      <value>(372, 24)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -736,7 +736,7 @@ this library.</value>
     <key>qtgui_freq_sink_x</key>
     <param>
       <key>autoscale</key>
-      <value>True</value>
+      <value>False</value>
     </param>
     <param>
       <key>average</key>
@@ -776,11 +776,11 @@ this library.</value>
     </param>
     <param>
       <key>fftsize</key>
-      <value>1024*4</value>
+      <value>1024</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(984, 524)</value>
+      <value>(1044, 528)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -788,7 +788,7 @@ this library.</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
+      <value>270</value>
     </param>
     <param>
       <key>grid</key>
@@ -1063,11 +1063,11 @@ this library.</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(984, 676)</value>
+      <value>(900, 528)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -1075,7 +1075,7 @@ this library.</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
+      <value>270</value>
     </param>
     <param>
       <key>grid</key>
@@ -1339,7 +1339,7 @@ this library.</value>
     </param>
     <param>
       <key>size</key>
-      <value>1024*8</value>
+      <value>1024*4</value>
     </param>
     <param>
       <key>srate</key>
